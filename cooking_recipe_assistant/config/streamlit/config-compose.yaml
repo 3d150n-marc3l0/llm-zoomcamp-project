@@ -1,0 +1,42 @@
+
+elasticsearch:
+  url: "http://elasticsearch:9200"
+  index_name: cooking-recipes
+  type: "hybrid"
+  vector_field: text_vector
+  boosting:
+    meals: 1.3267880385949111
+    title: 1.8744388428292256
+    ingredients: 1.5107278257070114
+    summary: 3.3330549166389503
+    text: 2.9015143483052235
+    tips: 2.619409172670707
+    vector_boost: 0.8992024772398135
+  embedding:
+    #model_name: "all-mpnet-base-v2"
+    model_name: "all-MiniLM-L6-v2"
+
+rag:
+  rewrite:
+     params:
+        model: "gpt-4o-mini"
+        #model: "llama3"
+        #base_url: "http://ollama:11434"
+  generator:
+     params:
+        model: "gpt-4o-mini"
+        #model: "llama3"
+        #base_url: "http://ollama:11434"
+  judge:
+     params:
+        model: "gpt-4o-mini"
+        #model: "llama3"
+        #base_url: "http://ollama:11434"
+
+prompts:
+  entry_template: "config/prompts/en_entry_template.txt"
+  prompt_template_rewrite: "config/prompts/en_prompt_template_rag_v1.txt"
+  prompt_template_rag: "config/prompts/en_prompt_template_rag_v1.txt"
+  prompt_template_judge: "config/prompts/en_prompt_template_eval_rag_v1.txt"
+  #system_template_path: "cooking_recipe_assistant/config/prompts/en_prompt_template_system_assistent.txt"
+  #user_template_path: "cooking_recipe_assistant/config/prompts/en_prompt_template_blocks.txt"

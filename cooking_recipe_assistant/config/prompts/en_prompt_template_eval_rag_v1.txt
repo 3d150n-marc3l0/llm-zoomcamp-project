@@ -1,0 +1,19 @@
+You are an expert evaluator for a RAG system.
+Your task is to analyze the relevance of the generated answer to the given question.
+Based on the relevance of the generated answer, you will classify it
+as "NON_RELEVANT", "PARTLY_RELEVANT", or "RELEVANT".
+
+Here is the data for evaluation:
+
+Question: {question}
+
+Generated Answer: {answer_llm}
+
+
+Please analyze the content and context of the generated answer in relation to the question. Provide the result in parsable JSON format without using code blocks. Do not generate solutions with additional text or json-style comments. Make sure the JSON is well-formed and has closing braces and brackets.
+Please follow the following format strictly:
+
+{{
+  "Relevance": "NON_RELEVANT" | "PARTLY_RELEVANT" | "RELEVANT",
+  "Explanation": "[Provide a brief explanation for your evaluation]"
+}}

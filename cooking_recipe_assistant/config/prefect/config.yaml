@@ -1,0 +1,57 @@
+GENERATE_DATASET:
+  OUTPUT_DIR: "data/raw"
+  MAX_VIDEOS: 70
+  UPDATE_PLAYLIST_INFO: True
+  PLAYLIST_IDS:
+      - "PLoyFGpU_IasVb0QvKn2IgbPZ_gKNGzP7Z"  #  1. Guisos y cuchareo
+      - "PLoyFGpU_IasWzT5nS-qF-gI2K5eJURRsV"  #  2. Pastas
+      - "PLoyFGpU_IasX1xkQfxcAw3alSibGj3Mg_"  #  3. Arroces
+      - "PLoyFGpU_IasXD955aZhg9aZ9_UPtGIrE4"  #  4. Carnes y Aves
+      - "PLoyFGpU_IasUmRDsq3r_M9rqZcrtH4im5"  #  5. Recetas de navidad
+      - "PLoyFGpU_IasW79W_MepAt_26tGxsNeSrA"  #  6. Pescados y Mariscos
+      - "PLoyFGpU_IasXtIMsfqUIjveH-2ZaU-Ddi"  #  7. Ensaladas
+      - "PLoyFGpU_IasWdF-U6YNvgflikUKRDiUHi"  #  8. Verduras y hortalizas
+      - "PLoyFGpU_IasX6Ag6gT6y6jKGtuKQpvjT0"  #  9. Pescado al horno
+      - "PLoyFGpU_IasX60n70ruTpxWLGW3leXgKJ"  # 10. Postres tradicionales
+      - "PLoyFGpU_IasU6BaX0dpoVn3M1PG86zBmr"  # 11. Asados
+      - "PLoyFGpU_IasWERZIVJi_6T_YAbAfHKB3r"  # 12. Legumbres
+      - "PLoyFGpU_IasXVrTgZp2qvlKyLYIE7qdt2"  # 13. Pasteles frios
+
+
+PREPROCESSING_DATA:
+  RAW_DATA_DIR: "data/raw"
+  PREPROCESSED_DATA_DIR: "data/processed"
+  SPLITTER: 
+    SPLITTER_NAME: "TransformersTokenText"
+    CHUNK_SIZE: 150
+    CHUNK_OVERLAP: 50
+    #SPLITTER_NAME: "Recursive"
+    #CHUNK_SIZE: 250
+    #CHUNK_OVERLAP: 50
+  BLOCKS_CHAIN:
+    #MODEL_NAME: "gpt-4o-mini"
+    MODEL_NAME: "llama3"
+    TEMPLATE_PATH: "cooking_recipe_assistant/config/prompts/en_prompt_template_blocks.txt"
+  EXTRACTIONS_CHAIN:
+    #MODEL_NAME: "gpt-4o-mini"
+    MODEL_NAME: "llama3"
+    TEMPLATE_PATH: "cooking_recipe_assistant/config/prompts/en_prompt_template_extractions.txt"
+
+INDEXING_DATA:
+  ES_URL: "http://localhost:9200"
+  INDEX_NAME: "cooking-recipes"
+  INDEX_CONFIG_PATH: "cooking_recipe_assistant/config/es/es_index.json"
+  DELETE_INDEX: True
+  EMBEDDING:
+    MODEL_NAME: "all-MiniLM-L6-v2"
+  PREPROCESSED_DOCUMENTS_DIR: "data/processed/documents"
+  INDEXED_DOCUMENTS_DIR: "data/indexing/documents"
+
+
+GENERATING_QUESTIONS:
+  INDEXED_DOCUMENTS_DIR: "data/indexing/documents"
+  GROUND_TRUTH_DIR: "data/test/ground_truth"
+  QUESTIONS_CHAIN:
+    #MODEL_NAME: "gpt-4o-mini"
+    MODEL_NAME: "llama3"
+    TEMPLATE_PATH: "cooking_recipe_assistant/config/prompts/en_prompt_template_questions.txt"

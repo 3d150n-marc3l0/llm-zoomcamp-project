@@ -1,0 +1,6 @@
+meals: {meals}
+title: {title}
+ingredients: {ingredients}
+summary: {summary}
+instructions: {text}
+tips: {tips}

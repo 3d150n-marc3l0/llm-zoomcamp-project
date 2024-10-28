@@ -1,0 +1,36 @@
+{
+    "settings": {
+        "number_of_shards": 1,
+        "number_of_replicas": 0
+    },
+    "mappings": {
+        "properties": {
+            "id": {"type": "text"},
+            "chunk_number": {"type": "integer"},
+            "meals": {"type": "keyword"},
+            "title": {"type": "text"},
+            "ingredients": {"type": "keyword"},
+            "summary": {"type": "text"},
+            "text": {"type": "text"},
+            "tips": {"type": "keyword"},
+            "title_vector"   : {
+                "type": "dense_vector", 
+                "dims": 384, 
+                "index": "true", 
+                "similarity": "cosine"
+            },
+            "summary_vector" : {
+                "type": "dense_vector", 
+                "dims": 384, 
+                "index": "true", 
+                "similarity": "cosine"
+            },
+            "text_vector"    : {
+                "type": "dense_vector", 
+                "dims": 384, 
+                "index": "true", 
+                "similarity": "cosine"
+            }
+        }
+    }
+}

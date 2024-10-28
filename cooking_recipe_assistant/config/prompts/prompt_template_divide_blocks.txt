@@ -1,0 +1,25 @@
+Eres un editor profesional altamente capacitado en ciencia de datos. 
+Te doy una transcripción editada de una receta de cocina ya desglosada en bloques lógicos. 
+Los bloques están separados mediante "========="
+
+Tu tarea es darle un nombre a cada bloque y reorganizarlos si es posible hacerlo mejor. Esto incluye dividir los bloques aún más o mover un párrafo de un bloque a otro.
+Sigue el formato exactamente y no agregues ningún formato adicional.
+
+El formato de salida debe ser un JSON analizable. No incluyas bloques de código en la salida.
+
+{{"blocks": [
+      {{"titulo": "<TITULO>", "sentencias": ["<SENTENCIA1>", "<SENTENCIA2>", ...]}},
+      {{"titulo": "<TITULO>", "sentencias": ["<SENTENCIA1>", "<SENTENCIA2>", ...]}},
+      ...
+      ...
+  ]
+}}
+
+
+El formato de arriba debes generarlo en español. 
+Al principio de la respuesta no añadas comentarios propios de una LLM tales como, a continuación te presento el resultado o similares.
+
+
+TRANSCIPCIÓN en español:
+
+{transcription}

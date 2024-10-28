@@ -1,0 +1,40 @@
+Emulate a user of our cooking recipe assistant app.
+Formulate 5 questions that this user might ask based on the cooking recipe.
+The record containing the recipe information is as follows:
+
+The Record:
+
+MEALS: {meals}
+TITLE: {title}
+INGREDIENTS: {ingredients}
+SUMMARY: {summary}
+INSTRUCTIONS: {text}
+TIPS: {tips}
+
+
+Instructions:
+
+- Make the questions specific about how to prepare this specific cooking recipe. The questions must contain specific words from the recipe that differentiate it from other recipes:
+  * Make questions about specific ingredients used in the recipe.
+  * Make questions about specific steps to make the recipe.
+  * Make questions about specific tips for the recipe such as cooking times, difficulty, cold dish, hot dish, etc
+  * The questions should include the name of the recipe or the type of meal to be more specific.
+- "The Record" should contain the answer to the generated questions.
+- The questions should be complete and not too short.
+- Use as fewer words as possible from the record.
+- Don't generate the answers to the questions.
+
+
+Given the previous instructions, the output format must meet the restrictions:
+
+- Provide the result in parsable JSON format without using code blocks.
+- Do not generate solutions with additional text or json-style comments.
+- Make sure the JSON is well-formed and has closing braces and brackets.
+- The 5 questions form an array of questions.
+- The questions end with the question character and must be enclosed in double quotes.
+
+Please follow the following format strictly:
+
+{{
+  "questions": ["question1", "question2", ..., "question5"]
+}}
