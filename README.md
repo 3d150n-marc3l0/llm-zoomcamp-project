@@ -315,6 +315,14 @@ A sample of the result is shown below
 
 
 
+## Dataset restoration
+
+The dataset is stored in the file data_recipe.zip. Unzip this file with the following command.
+
+```bash
+unzip data_recipe.zip
+```
+
 ## Retrieval Evaluation 
 
 The ground-truth is composed of 1160 questions. To carry out this assessment, this set was divided into two sub-counts:
