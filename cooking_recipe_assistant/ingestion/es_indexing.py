@@ -120,7 +120,7 @@ def index_data(
     dest_data_dir,
     embedding,
     thread_count=1, 
-    chunk_size=200
+    chunk_size=20
 ) -> None:
     logger = get_run_logger()
     logger.info(f"[INDEX-DATA] index_name   : {index_name}")
