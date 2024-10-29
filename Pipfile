@@ -25,6 +25,7 @@ psycopg2-binary = "*"
 questionary = "*"
 streamlit-feedback = "*"
 pgcli = "*"
+prefect = "==2.20.9"
 
 [dev-packages]
 
