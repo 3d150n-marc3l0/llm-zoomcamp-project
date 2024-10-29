@@ -79,9 +79,13 @@ def build_embedding(
     tags=["data", "ingestion", "indexing", "connection"]
 )
 def create_connection(
-    es_url: str
+    es_url: str,
+    timeout
 ):
-    es = Elasticsearch(hosts=[es_url])
+    es = Elasticsearch(
+        hosts=[es_url],
+        timeout=timeout
+    )
     return es
 
 
@@ -120,7 +124,7 @@ def index_data(
     dest_data_dir,
     embedding,
     thread_count=1, 
-    chunk_size=20
+    chunk_size=10
 ) -> None:
     logger = get_run_logger()
     logger.info(f"[INDEX-DATA] index_name   : {index_name}")
@@ -129,6 +133,7 @@ def index_data(
     # Load Elastic search
     os.makedirs(dest_data_dir, exist_ok=True)
 
+    logger.info(f"Indexing documents to {index_name}...")
     all_documents = []
     for root, _, files in os.walk(src_data_dir):
         print(src_data_dir, root, len(files))
@@ -164,9 +169,16 @@ def index_data(
         logger.error("Bulk indexing error:", e)
         for error_detail in e.errors:
             logger.error(error_detail)
-
-    logger.info(f"Successfully indexed {success_count} documents.")
-    logger.info(f"Failed to index {failed_count} documents.")
+    '''
+    for action in all_documents:
+        try:
+            doc_id = action["_id"]
+            es.index(index=index_name, body=action)
+            logger.info(f"Documento indexado con éxito.")
+        except Exception as e:
+            logger.error(f"Error al indexar el documento {doc_id}: {e}")
+    '''
+    
 
     # Save chunks
     for doc in all_documents:

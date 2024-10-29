@@ -1,7 +1,8 @@
 GENERATE_DATASET:
   OUTPUT_DIR: "data/raw"
   MAX_VIDEOS: 70
-  UPDATE_PLAYLIST_INFO: True
+  UPDATE_PLAYLIST_INFO: False
+  UPDATE_TRANSCRIPTS: False
   PLAYLIST_IDS:
       - "PLoyFGpU_IasVb0QvKn2IgbPZ_gKNGzP7Z"  #  1. Guisos y cuchareo
       - "PLoyFGpU_IasWzT5nS-qF-gI2K5eJURRsV"  #  2. Pastas
@@ -39,6 +40,7 @@ PREPROCESSING_DATA:
 
 INDEXING_DATA:
   ES_URL: "http://localhost:9200"
+  TIMEOUT: 60
   INDEX_NAME: "cooking-recipes"
   INDEX_CONFIG_PATH: "cooking_recipe_assistant/config/es/es_index.json"
   DELETE_INDEX: True

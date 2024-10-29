@@ -277,6 +277,7 @@ def generate_youtube_dataset(
             max_videos=max_videos)        
     
     # Retrive transcript
-    doc_raw_data_dir = os.path.join(output_dir, 'documents')
-    os.makedirs(doc_raw_data_dir, exist_ok=True)
-    download_youtube_videos(video_playlist_map, doc_raw_data_dir)
+    if update_trascripts:
+        doc_raw_data_dir = os.path.join(output_dir, 'documents')
+        os.makedirs(doc_raw_data_dir, exist_ok=True)
+        download_youtube_videos(video_playlist_map, doc_raw_data_dir)

@@ -66,11 +66,11 @@ def cooking_recipe_ingestion_flow(config_path: str):
     # Generate dataset
     # ========================================
     #generating_data(config['GENERATE_DATASET'])
-    
     generate_youtube_dataset(
         playlist_ids=config['GENERATE_DATASET']['PLAYLIST_IDS'],
         output_dir=config['GENERATE_DATASET']['OUTPUT_DIR'],
         update_playlist_info=config['GENERATE_DATASET']['UPDATE_PLAYLIST_INFO'],
+        update_trascripts=config['GENERATE_DATASET']['UPDATE_TRANSCRIPTS'],
         max_videos=config['GENERATE_DATASET']['MAX_VIDEOS'],
     )
     
@@ -117,7 +117,10 @@ def cooking_recipe_ingestion_flow(config_path: str):
     print(f"DELETE_INDEX=> value: {prepro_conf['DELETE_INDEX']}, type: {type(prepro_conf['DELETE_INDEX'])}")
 
     # Create ES connetion
-    es_client = create_connection(prepro_conf["ES_URL"])
+    es_client = create_connection(
+        prepro_conf["ES_URL"],
+        prepro_conf["TIMEOUT"]
+    )
 
     # Create embedding
     embedding = build_embedding(model_name=prepro_conf["EMBEDDING"]["MODEL_NAME"])
