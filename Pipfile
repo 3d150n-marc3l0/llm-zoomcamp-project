@@ -26,6 +26,9 @@ questionary = "*"
 streamlit-feedback = "*"
 pgcli = "*"
 prefect = "==2.20.9"
+pytube = "*"
+youtube-transcript-api = "*"
+deep-translator = "*"
 
 [dev-packages]
 

@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "ab5356fefb9d2982b9426e9e463d0ff403181a37aadc6ebaba186b1ca2adafe8"
+            "sha256": "7457957276acfb7c7bbed434d318dcd2d075b4023bc62be9f02ba508644b7764"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -699,6 +699,15 @@
             ],
             "markers": "python_version >= '3.5'",
             "version": "==5.1.1"
+        },
+        "deep-translator": {
+            "hashes": [
+                "sha256:801260c69231138707ea88a0955e484db7d40e210c9e0ae0f77372ffda5f4bf5",
+                "sha256:d635df037e23fa35d12fd42dab72a0b55c9dd19e6292009ee7207e3f30b9e60a"
+            ],
+            "index": "pypi",
+            "markers": "python_version >= '3.7' and python_version < '4.0'",
+            "version": "==1.11.4"
         },
         "defusedxml": {
             "hashes": [
@@ -2761,6 +2770,15 @@
             "markers": "python_version >= '3.7'",
             "version": "==8.0.4"
         },
+        "pytube": {
+            "hashes": [
+                "sha256:076052efe76f390dfa24b1194ff821d4e86c17d41cb5562f3a276a8bcbfc9d1d",
+                "sha256:07b9904749e213485780d7eb606e5e5b8e4341aa4dccf699160876da00e12d78"
+            ],
+            "index": "pypi",
+            "markers": "python_version >= '3.7'",
+            "version": "==15.0.0"
+        },
         "pytz": {
             "hashes": [
                 "sha256:2aa355083c50a0f93fa581709deac0c9ad65cca8a9e9beac660adcbd493c798a",
@@ -4451,6 +4469,14 @@
             ],
             "markers": "python_version >= '3.9'",
             "version": "==1.17.0"
+        },
+        "youtube-transcript-api": {
+            "hashes": [
+                "sha256:019dbf265c6a68a0591c513fff25ed5a116ce6525832aefdfb34d4df5567121c",
+                "sha256:cad223d7620633cec44f657646bffc8bbc5598bd8e70b1ad2fa8277dec305eb7"
+            ],
+            "index": "pypi",
+            "version": "==0.6.2"
         }
     },
     "develop": {}
