@@ -47,6 +47,12 @@ The Cooking Recipe Assistant is a RAG application designed to assist users in pr
 - [Pipenv](https://pipenv.pypa.io/en/latest/) is a tool for managing dependencies in Python projects, combining the functionalities of pip and virtualenv.
 
 
+## System RAG
+
+<p align="center">
+  <img src="images/system.png">
+</p>
+
 ## Dataset
 
 ## Overview
