@@ -50,7 +50,7 @@ The Cooking Recipe Assistant is a RAG application designed to assist users in pr
 ## System RAG
 
 <p align="center">
-  <img src="images/system.png">
+  <img src="images/Arch_RAG_Recipe.png">
 </p>
 
 ## Dataset
