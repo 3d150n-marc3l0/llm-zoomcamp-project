@@ -438,7 +438,7 @@ If you want to run the application locally,
 start only postres and grafana:
 
 ```bash
-docker-compose up -d postgres grafana
+docker-compose up -d postgres grafana elasticsearch
 ```
 
 If you previously started all applications with
@@ -477,7 +477,7 @@ Make sure you have the OPENAI_API_KEY environment variable set and run it:
 
 ```bash
 docker run -it --rm \
-    --network="zoomcamp-llm_default" \
+    --network="llm-zoomcamp-project_default" \
     --env-file=".env" \
     -e OPENAI_API_KEY=${OPENAI_API_KEY} \
     -e ENV_DEPLOYMENT=compose \
