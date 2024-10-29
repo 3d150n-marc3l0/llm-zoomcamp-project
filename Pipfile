@@ -29,6 +29,10 @@ prefect = "==2.20.9"
 pytube = "*"
 youtube-transcript-api = "*"
 deep-translator = "*"
+matplotlib = "*"
+hyperopt = "*"
+seaborn = "*"
+pyyaml = "*"
 
 [dev-packages]
 
